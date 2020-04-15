@@ -8,15 +8,10 @@ def zero_matrix(matrix)
       if val.zero?
         row_ids << i
         col_ids << j
-        puts "run"
       end
-      # puts "#{val.zero?} at #{i} and #{j}"
     end
   end
-  p row_ids
-  p col_ids
-  p matrix
-  matrix.map!.with_index do |row, i|
+  matrix.each_with_index do |row, i|
     if row_ids.include? i
       row.map! { |val| val = 0 }
     else
